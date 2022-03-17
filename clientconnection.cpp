@@ -97,7 +97,7 @@ void ClientConnection::parse()
     }
     catch (nlohmann::detail::parse_error &error)
     {
-        std::cout << "Data is not completed or broken...\n";
+        std::cout << "Data is not completed or broken: " << socket.available() << '\n';
     }
     catch (const std::exception &e)
     {
